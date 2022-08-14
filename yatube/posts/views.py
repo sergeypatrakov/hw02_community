@@ -1,4 +1,3 @@
-from gc import get_objects
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 
@@ -23,3 +22,4 @@ def group_posts(request, slug):
         'title': title,
     }
     return render(request, template, context)
+
