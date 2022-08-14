@@ -11,6 +11,7 @@ def index(request):
     }
     return render(request, 'posts/index.html', context)
 
+
 def group_posts(request, slug):
     template = 'posts/group_list.html'
     title = 'Записи сообщества'
@@ -22,4 +23,3 @@ def group_posts(request, slug):
         'title': title,
     }
     return render(request, template, context)
-
