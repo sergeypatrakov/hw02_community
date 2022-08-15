@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post, Group
+from .models import Group, Post
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -18,8 +18,15 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class GroupAdmin(admin.ModelAdmin):
-    pass
-
+    list_display = (
+        'pk',
+        'title',
+        'slug',
+        'description',
+    )
+    search_fields = ('title',)
+    list_filter = ('title',)
+    prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Group, GroupAdmin)
