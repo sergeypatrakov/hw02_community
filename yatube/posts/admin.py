@@ -28,6 +28,6 @@ class GroupAdmin(admin.ModelAdmin):
     list_filter = ('title',)
     prepopulated_fields = {'slug': ('title',)}
 
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Group, GroupAdmin)
-
