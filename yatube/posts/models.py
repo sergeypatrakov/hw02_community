@@ -14,6 +14,10 @@ class Group(models.Model):
     def __str__(self):
         return(self.title)
 
+    class Meta:
+        verbose_name = 'Группа'
+        verbose_name_plural = 'Группы'
+
 
 class Post(models.Model):
     text = models.TextField(verbose_name='Текст')
@@ -33,13 +37,13 @@ class Post(models.Model):
         null=True,
         verbose_name='Группы',
         on_delete=models.SET_NULL,
-        related_name='group',
+        related_name='posts',
     )
 
     def __str__(self):
         return(self.text[:MAX_LENGTH])
 
     class Meta:
+        ordering = ('-pub_date',)
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
-        ordering = ['-pub_date']
