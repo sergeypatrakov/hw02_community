@@ -53,7 +53,7 @@ ___
 
 ### Description:
 
-Social network for bloggers. Part 3. Added: group and posts models, templates
+Social network for bloggers. Part 2. Added: group and posts models, templates
 
 ### Tech:
 
